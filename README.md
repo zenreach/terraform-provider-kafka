@@ -32,6 +32,8 @@ $ terraform apply
 - `retention_bytes` - the retention bytes for the topic
 - `retention_ms` - the retention period in milliseconds for the topic
 - `cleanup_policy` - the clean up policy for the topic, for example compaction
+- `segment_bytes` - the segment file size for the log
+- `segement_ms` - the time after which Kafka will force the log to roll
 
 ## Manual testing in docker-compose
 
