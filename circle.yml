@@ -20,8 +20,8 @@ dependencies:
     - sudo apt-get install glide -y
   override:
     - glide install
-    - mkdir -p "$PROJECT_DIR"
-    - rsync -az --delete ./ "$PROJECT_DIR"
+    - sudo mkdir -p "$PROJECT_DIR"
+    - sudo rsync -az --delete ./ "$PROJECT_DIR"
 
 test:
   override:
