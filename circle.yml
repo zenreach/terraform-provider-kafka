@@ -1,6 +1,6 @@
 machine:
   environment:
-    GODIST: "go1.6.linux-amd64.tar.gz"
+    GODIST: "go1.8.linux-amd64.tar.gz"
     IMPORT_PATH: "github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
     PROJECT_DIR: "/home/ubuntu/.go_workspace/src/$IMPORT_PATH"
 
@@ -31,6 +31,8 @@ deployment:
   release:
     tag: /v.*/
     commands:
+      - go get github.com/tcnksm/ghr
+      - go get github.com/mitchellh/gox 
       - |
         cd "$PROJECT_DIR" && \
         gox -osarch="netbsd/arm" \
